@@ -1,4 +1,4 @@
-    <?php include 'db/db.php'; ?>
+    <?php include '../db/db.php'; ?>
 
     <?php include 'header.php'; ?>
 
@@ -6,7 +6,8 @@
 
 	<?php 
         
-        $sql = "SELECT * FROM contribuables WHERE statut_cont=1 ";
+        $sql = "SELECT * FROM contribuables as c, types as t
+        WHERE c.statut_cont=1 AND c.type=t.id_type ";
         $result = mysqli_query($db,$sql);
         $row = mysqli_num_rows($result);
 	 ?>
@@ -33,7 +34,7 @@
 					</div>
 				</div>
 				<!-- Simple Datatable start -->
-				<div class="card-box mb-30" >
+				<div class="card-box mb-30" style="border:2px solid #254575;">
 					<div class="alert alert-danger" id="msg-error">
 			          Une ligne a été supprimée!
 			      </div>
@@ -67,7 +68,7 @@
 										<?php echo $get_contribuable['tel'] ?>
 									</td>
 									<td>
-										<?php echo $get_contribuable['type'] ?>
+										<?php echo $get_contribuable['libelle_type'] ?>
 									</td>
 									<td>
 										<?php echo $get_contribuable['sexe'] ?>
@@ -99,27 +100,27 @@
 		</div>
 	</div>
 	<!-- js -->
-	<script src="vendors/scripts/jquery.min.js"></script>
-	<script src="vendors/scripts/supprimer_contribuable.js"></script>
+	<script src="../vendors/scripts/jquery.min.js"></script>
+	<script src="../vendors/scripts/supprimer_contribuable.js"></script>
 	<script>
 		
 	</script>
-	<script src="vendors/scripts/core.js"></script>
-	<script src="vendors/scripts/script.min.js"></script>
-	<script src="vendors/scripts/process.js"></script>
-	<script src="vendors/scripts/layout-settings.js"></script>
-	<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
-	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
-	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+	<script src="../vendors/scripts/core.js"></script>
+	<script src="../vendors/scripts/script.min.js"></script>
+	<script src="../vendors/scripts/process.js"></script>
+	<script src="../vendors/scripts/layout-settings.js"></script>
+	<script src="../src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="../src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+	<script src="../src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+	<script src="../src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 	<!-- buttons for Export datatable -->
-	<script src="src/plugins/datatables/js/dataTables.buttons.min.js"></script>
-	<script src="src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
-	<script src="src/plugins/datatables/js/buttons.print.min.js"></script>
-	<script src="src/plugins/datatables/js/buttons.html5.min.js"></script>
-	<script src="src/plugins/datatables/js/buttons.flash.min.js"></script>
-	<script src="src/plugins/datatables/js/pdfmake.min.js"></script>
-	<script src="src/plugins/datatables/js/vfs_fonts.js"></script>
+	<script src="../src/plugins/datatables/js/dataTables.buttons.min.js"></script>
+	<script src="../src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
+	<script src="../src/plugins/datatables/js/buttons.print.min.js"></script>
+	<script src="../src/plugins/datatables/js/buttons.html5.min.js"></script>
+	<script src="../src/plugins/datatables/js/buttons.flash.min.js"></script>
+	<script src="../src/plugins/datatables/js/pdfmake.min.js"></script>
+	<script src="../src/plugins/datatables/js/vfs_fonts.js"></script>
 	<!-- Datatable Setting js -->
 	<script src="vendors/scripts/datatable-setting.js"></script></body>
 </html>

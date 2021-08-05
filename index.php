@@ -1,7 +1,7 @@
 
-	<?php include 'header.php'; ?>
+	<?php include 'views/header.php'; ?>
 
-	<?php include 'sidebar.php'; ?>
+	<?php include 'views/sidebar.php'; ?>
 
 	<div class="mobile-menu-overlay"></div>
 

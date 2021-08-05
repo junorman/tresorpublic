@@ -26,14 +26,15 @@ $(document).ready(function(){
                }
                 
             });
+
             $('.btn-add').click(function(e){
                 e.preventDefault();
                 var nom = $('#nom').val();
                 var prenom = $('#prenom').val();
                 var tel = $('#tel').val();
-                var nif = $('#nif').val();
                 var sexe = $('#sexe').val();
-
+                var id_cont = $('#id_cont').val();
+                var nif = $('#nif').val();
 
                 if (nom.length == '') {
                      $('#msg-nom').show();
@@ -101,12 +102,14 @@ $(document).ready(function(){
                 }else{
 
                     $.ajax({  
-                    url:"traitements/ajouter_contribuable.php",  
+                    url:"../traitements/editer_contribuable.php",  
                     method:"POST",  
                     data:{nom:nom, prenom:prenom, tel:tel, 
-                      type:type, sexe:sexe, nif:nif},  
+                      type:type, sexe:sexe, id_cont:id_cont,
+                      nif:nif},  
                     success:function(res)  
                         { 
+                            
 
                             if (res=="errors") {
 
@@ -128,14 +131,9 @@ $(document).ready(function(){
                                              setTimeout(function(){
                                 $('#msg-success').fadeOut('slow');
                                  },5000);
-
-                                 nom = $('#nom').val('');
-                                 prenom = $('#prenom').val('');
-                                 tel = $('#tel').val('');
-                                 nif = $('#nif').val('');
                                  
                             }
-                            else if (res=="error") {
+                            /*else if (res=="error") {
 
                                 $('#msg-error').show();
                                 $('#msg-error').fadeIn();
@@ -145,11 +143,7 @@ $(document).ready(function(){
                                  },5000);
                                 return false; 
                                  
-                             }
-
-                             
-
-                             
+                             }*/
                         }
                     });
                     

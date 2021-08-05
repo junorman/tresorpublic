@@ -6,9 +6,9 @@
 	<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
 
 	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/cropped-logo-dgcpt2-180x180.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="vendors/images/cropped-logo-dgcpt2-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="vendors/images/cropped-logo-dgcpt2-192x192.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../vendors/images/cropped-logo-dgcpt2-180x180.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../vendors/images/cropped-logo-dgcpt2-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../vendors/images/cropped-logo-dgcpt2-192x192.png">
 
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,11 +16,11 @@
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/dataTables.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
+	<link rel="stylesheet" type="text/css" href="../vendors/styles/core.css">
+	<link rel="stylesheet" type="text/css" href="../vendors/styles/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="../src/plugins/datatables/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" type="text/css" href="../src/plugins/datatables/css/responsive.bootstrap4.min.css">
+	<link rel="stylesheet" type="text/css" href="../vendors/styles/style.css">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
@@ -35,7 +35,7 @@
 <body>
 	<div class="pre-loader">
 		<div class="pre-loader-box">
-			<div class="loader-logo"><img src="vendors/images/cropped-logo-dgcpt2-192x192.png" alt=""></div>
+			<div class="loader-logo"><img src="../vendors/images/cropped-logo-dgcpt2-192x192.png" alt=""></div>
 			<div class='loader-progress' id="progress_div">
 				<div class='bar' id='bar1'></div>
 			</div>
@@ -154,7 +154,7 @@
 				<div class="dropdown">
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 						<span class="user-icon">
-							<img src="vendors/images/photo1.jpg" alt="">
+							<img src="../vendors/images/photo1.jpg" alt="">
 						</span>
 						<span class="user-name">Ross C. Lopez</span>
 					</a>

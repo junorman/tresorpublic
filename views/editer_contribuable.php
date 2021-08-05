@@ -1,12 +1,20 @@
-    <?php include 'db/db.php'; ?>
+    <?php include '../db/db.php'; ?>
 
     <?php include 'header.php'; ?>
 
 	<?php include 'sidebar.php'; ?>
     <?php 
+      
+      $id_cont = $_GET['id_cont'];
 
       $sql = "SELECT * FROM types ";
       $result = mysqli_query($db,$sql);
+
+      $sql2 = "SELECT * FROM contribuables WHERE id_cont='".$id_cont."' ";
+      $result2 = mysqli_query($db,$sql2);
+      $get_info_contribuable = mysqli_fetch_array($result2);
+
+      $sexe = array('M', 'F');
 
      ?>
 	<div class="mobile-menu-overlay"></div>
@@ -14,11 +22,11 @@
 	<div class="main-container">
 		<div class="pd-ltr-20 xs-pd-20-10">
 			<div class="min-height-200px">
-				<div class="alert alert-danger" id="msg-error">
+				<!-- <div class="alert alert-danger" id="msg-error">
 			          Ce contribuable existe déjà!
-			      </div>
+			      </div> -->
 			      <div class="alert alert-success" id="msg-success">
-			          Contribuable créé avec succès!
+			          Contribuable Modifié avec succès!
 			     </div>
 				<div class="page-header" style="border:2px solid #254575;">
 					<div class="row">
@@ -52,28 +60,39 @@
 					<form>
 						<div class="row">
 								<div class="col-md-6 form-group">
+									<input class="form-control" type="hidden" id="id_cont" value="<?php echo $get_info_contribuable['id_cont'] ?>">
 									<label>Nom</label>
-									<input class="form-control" type="text" placeholder="Nom" id="nom">
+									<input class="form-control" type="text" placeholder="Nom" id="nom" value="<?php echo $get_info_contribuable['nom'] ?>">
 									<span id="msg-nom"></span>
 								</div>
 								<div class="col-md-6 form-group">
 									<label>Prénom</label>
-									<input class="form-control" placeholder="Prénom" type="text" id="prenom">
+									<input class="form-control" placeholder="Prénom" type="text" id="prenom" value="<?php echo $get_info_contribuable['prenom'] ?>">
 									<span id="msg-prenom"></span>
 								</div>
 								<div class="col-md-6 form-group">
 									<label>Téléphone</label>
-									<input class="form-control" placeholder="Téléphone" type="text" id="tel">
+									<input class="form-control" placeholder="Téléphone" type="text" id="tel" value="<?php echo $get_info_contribuable['tel'] ?>">
 									<span id="msg-tel"></span>
 								</div>
 								<div class="col-md-6 form-group">
 									<label>Types</label>
 									<select class="form-control" id="type">
 										<option>Sélectionner un type</option>
-										<?php while ($get_types = mysqli_fetch_array($result)) {?>
-										<option value="<?php echo $get_types['id_type'] ?>"><?php echo $get_types['libelle_type']; ?></option>
+										<?php while ($get_types = mysqli_fetch_array(
+											$result)) {
+                                        if ($get_types['type'] == $get_info_contribuable['type']) {
+                                             	?>
+                                        <option value="<?php echo $get_types['id_type'] ?>" selected="selected"> <?php echo $get_types['libelle_type']; ?> </option>
+                                             <?php
+                                             }else{
+                                             ?>
+                                             <option value="<?php echo $get_types['id_type'] ?>"><?php echo $get_types['libelle_type']; ?></option>
+                                             <?php
+                                             }
+											?>
+										
 									    <?php } ?>
-									    
 									</select>
 									<span id="msg-type"></span>
 								</div>
@@ -85,8 +104,20 @@
 								<div class="col-md-6 form-group" id="input2">
 									<label>Sexe</label>
 									<select class="form-control" id="sexe">
-										<option value="M">M</option>
-										<option value="F">F</option>
+										<?php foreach ($sexe as $val) {
+
+											if ($get_contribuable['sexe'] == $val) {
+										?>
+												<option value="<?php echo $val ?>" selected="selected"><?php echo $val ?></option>
+										<?php
+											}else{
+										?>
+										        <option value="<?php echo $val ?>"><?php echo $val ?></option>
+										<?php
+											}
+											// code...
+										} ?>
+										
 									</select>
 								</div>
 								<div class="col-md-6 form-group">
@@ -112,15 +143,15 @@
 		</div>
 	</div>
 	<!-- js -->
-	<script src="vendors/scripts/jquery.min.js"></script>
-	<script src="vendors/scripts/ajouter_contribuable.js"></script>
+	<script src="../vendors/scripts/jquery.min.js"></script>
+	<script src="../vendors/scripts/editer_contribuables.js"></script>
 	<script>
 		
 	</script>
 	
-	<script src="vendors/scripts/core.js"></script>
-	<script src="vendors/scripts/script.min.js"></script>
-	<script src="vendors/scripts/process.js"></script>
-	<script src="vendors/scripts/layout-settings.js"></script>
+	<script src="../vendors/scripts/core.js"></script>
+	<script src="../vendors/scripts/script.min.js"></script>
+	<script src="../vendors/scripts/process.js"></script>
+	<script src="../vendors/scripts/layout-settings.js"></script>
 </body>
 </html>
