@@ -5,7 +5,7 @@ $(document).ready(function(){
     	var id = $(this).attr('id');
     	
     	$.ajax({  
-            url:"traitements/supprimer_type.php",  
+            url:"../traitements/supprimer_type.php",  
             method:"POST",  
             data:{id:id},  
             success:function(res)  

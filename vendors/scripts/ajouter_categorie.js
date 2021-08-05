@@ -8,7 +8,7 @@ $(document).ready(function(){
     	var libelle = $('#lib-cat').val();
     	
     	$.ajax({  
-            url:"traitements/ajouter_categorie.php",  
+            url:"../traitements/ajouter_categorie.php",  
             method:"POST",  
             data:{libelle:libelle},  
             success:function(res)  

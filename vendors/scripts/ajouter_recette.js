@@ -7,7 +7,7 @@ $(document).ready(function(){
     	var donnee = $('#add-rec').serialize();
     	
     	$.ajax({  
-            url:"traitements/ajouter_recette.php",  
+            url:"../traitements/ajouter_recette.php",  
             method:"POST",  
             data:donnee,
             success:function(res)  

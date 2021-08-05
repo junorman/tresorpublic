@@ -8,7 +8,7 @@ $(document).ready(function(){
     	var libelle = $('#lib-type').val();
     	
     	$.ajax({  
-            url:"traitements/ajouter_type.php",  
+            url:"../traitements/ajouter_type.php",  
             method:"POST",  
             data:{libelle:libelle},  
             success:function(res)  

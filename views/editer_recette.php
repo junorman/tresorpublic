@@ -1,4 +1,4 @@
-    <?php include 'db/db.php'; ?>
+    <?php include '../db/db.php'; ?>
 
     <?php include 'header.php'; ?>
 
@@ -127,15 +127,15 @@
 			      <div id="reponse"></div>
 			    </div>
 			    <!-- js -->
-			    <script src="vendors/scripts/jquery.min.js"></script>
-			    <script src="vendors/scripts/editer_recette.js"></script>
+			    <script src="../vendors/scripts/jquery.min.js"></script>
+			    <script src="../vendors/scripts/editer_recette.js"></script>
 			    <script>
 
 			    </script>
 
-			    <script src="vendors/scripts/core.js"></script>
-			    <script src="vendors/scripts/script.min.js"></script>
-			    <script src="vendors/scripts/process.js"></script>
-			    <script src="vendors/scripts/layout-settings.js"></script>
+			    <script src="../vendors/scripts/core.js"></script>
+			    <script src="../vendors/scripts/script.min.js"></script>
+			    <script src="../vendors/scripts/process.js"></script>
+			    <script src="../vendors/scripts/layout-settings.js"></script>
 			  </body>
 			  </html>
