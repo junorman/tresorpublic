@@ -6,12 +6,12 @@ $(document).ready(function(){
     	var id = $(this).attr('id');
     	
     	$.ajax({  
-            url:"../traitements/supprimer_contribuable.php",  
+            url:"../traitements/supprimer_recette.php",  
             method:"POST",  
             data:{id:id},  
             success:function(res)  
                 {   
-                	$('#row_'+id).remove();
+                	$('#'+id).remove();
                 	if (res=="success") {
 
                         $('#msg-error').show();
