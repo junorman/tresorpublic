@@ -1,5 +1,5 @@
 <?php
-$db = mysqli_connect("localhost","root","","tresorpublic");
+$db = mysqli_connect("localhost","root","","tresor_demo");
 
 // Check connection
 if (mysqli_connect_errno()) {

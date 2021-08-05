@@ -1,8 +1,8 @@
 <div class="left-side-bar">
 		<div class="brand-logo" style="background: #ffffff;height: 200px;">
 			<a href="index.php">
-				<img src="vendors/images/cropped-logo-dgcpt2-192x192.png" alt="" class="dark-logo">
-				<img src="vendors/images/cropped-logo-dgcpt2-180x180.png" alt="" class="light-logo" >
+				<img src="../vendors/images/cropped-logo-dgcpt2-192x192.png" alt="" class="dark-logo">
+				<img src="../vendors/images/cropped-logo-dgcpt2-180x180.png" alt="" class="light-logo" >
 			</a>
 			<div class="close-sidebar" data-toggle="left-sidebar-close">
 				<i class="ion-close-round"></i>
@@ -17,8 +17,9 @@
 							<span class="micon fa fa-money"></span><span class="mtext">Paiements</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="basic-table.html">Basic Tables</a></li>
-							<li><a href="datatable.html">DataTables</a></li>
+							<li></span><a href="ajouter_paiement.php">Encaissement</a></li>
+							<li><a href="views/list_paiement.php">Encaissées</a></li>
+							<li>	</span><a href="views/list_titre.php">Générées</a></li>
 						</ul>
 					</li>
 					
@@ -41,7 +42,7 @@
 							<span class="micon fa fa-users"></span><span class="mtext">Contribuables</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="ajouter_contribuable.php">Editer</a></li>
+							<li><a href="ajouter_contribuable.php">Créer</a></li>
 							<li><a href="liste_contribuables.php">Consulter</a></li>
 						</ul>
 					</li>			
