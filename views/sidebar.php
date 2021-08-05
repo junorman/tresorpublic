@@ -29,11 +29,8 @@
 							<span class="micon fa fa-book"></span><span class="mtext">Recettes</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="font-awesome.html">FontAwesome Icons</a></li>
-							<li><a href="foundation.html">Foundation Icons</a></li>
-							<li><a href="ionicons.html">Ionicons Icons</a></li>
-							<li><a href="themify.html">Themify Icons</a></li>
-							<li><a href="custom-icon.html">Custom Icons</a></li>
+							<li><a href="ajouter_recette.php">Ajouter</a></li>
+							<li><a href="liste_recettes.php">Consulter</a></li>
 						</ul>
 					</li>
 					
@@ -56,10 +53,8 @@
 							<span class="micon fa fa-cogs"></span><span class="mtext">Paramètres</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="introduction.html">Introduction</a></li>
-							<li><a href="getting-started.html">Getting Started</a></li>
-							<li><a href="color-settings.html">Color Settings</a></li>
-							<li><a href="third-party-plugins.html">Third Party Plugins</a></li>
+							<li><a href="gerer_categories.php">Gérer les catégories</a></li>
+							<li><a href="gerer_types.php">Gérer les types</a></li>
 						</ul>
 					</li>
 					
