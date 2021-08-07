@@ -18,8 +18,8 @@
 						</a>
 						<ul class="submenu">
 							<li></span><a href="ajouter_paiement.php">Encaissement</a></li>
-							<li><a href="views/list_paiement.php">Encaissées</a></li>
-							<li>	</span><a href="views/list_titre.php">Générées</a></li>
+							<li><a href="list_paiement.php">Encaissées</a></li>
+							<li>	</span><a href="list_titre.php">Générées</a></li>
 						</ul>
 					</li>
 					
