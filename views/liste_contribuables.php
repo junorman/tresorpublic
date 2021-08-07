@@ -6,7 +6,8 @@
 
 	<?php 
         
-        $sql = "SELECT * FROM contribuables WHERE statut_cont=1 ";
+        $sql = "SELECT * FROM contribuables as c, types as t
+        WHERE c.statut_cont=1 AND c.type=t.id_type ";
         $result = mysqli_query($db,$sql);
         $row = mysqli_num_rows($result);
 	 ?>
@@ -33,7 +34,7 @@
 					</div>
 				</div>
 				<!-- Simple Datatable start -->
-				<div class="card-box mb-30" >
+				<div class="card-box mb-30" style="border:2px solid #254575;">
 					<div class="alert alert-danger" id="msg-error">
 			          Une ligne a été supprimée!
 			      </div>
@@ -67,7 +68,7 @@
 										<?php echo $get_contribuable['tel'] ?>
 									</td>
 									<td>
-										<?php echo $get_contribuable['type'] ?>
+										<?php echo $get_contribuable['libelle_type'] ?>
 									</td>
 									<td>
 										<?php echo $get_contribuable['sexe'] ?>

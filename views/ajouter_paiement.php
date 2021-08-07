@@ -98,19 +98,19 @@
                     <div class="row">
                             <div class="col-md-6 form-group">
                                 <label>Numero de Paiement</label>
-                                <input class="form-control" type="number" placeholder="Numéro Paiement" id="numero">
+                                <input class="form-control" type="text" placeholder="Numéro Paiement" id="numero">
                                 <span id="msg-numero"></span>
                             </div>
                             <div class="col-md-6 form-group">
                                 <label>Teléphone (Airtel)</label>
-                                <input class="form-control" placeholder="Numéro de tel" type="number" id="tel">
+                                <input class="form-control" placeholder="Numéro de tel" type="text" id="tel">
                                 <span id="msg-tel"></span>
                             </div>
                             <div class="form-group col-md-12 text-right">
                                         <button class="btn btn-danger btn-add" role="button">
-                                        <i class="fa fa-check"></i> Annuler
+                                        <i class="fa fa-remove"></i> Annuler
                                         </button>
-                                        <button class="btn btn-success btn-add" role="button">
+                                        <button class="btn btn-success btn-send" role="button">
                                         <i class="fa fa-check"></i> Payer
                                         </button>
                             </div>
@@ -133,10 +133,88 @@
         <?php include 'footer.php'; ?>
     </div>
 </div>
+
+<div class="col-md-4 col-sm-12 mb-30">
+    <div class="pd-20 card-box height-100-p">
+        <h5 class="h4"><i class="fa fa-check-circle"></i> Confirmation !</h5>
+        
+        <div class="modal fade bs-example-modal-lg" id="confirmations-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header" style="background: #254575;color:#ffffff !important;">
+                        <h4 class="modal-title text-white" id="myLargeModalLabel"><i class="fa fa-eye"></i> Vérification</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger btn-cancel" data-dismiss="modal"><i class="fa fa-remove"></i> Abondonner</button>
+                        <button type="button" class="btn btn-success btn-confirme"><i class="fa fa-check"></i> Confirmer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 <!-- js -->
 <script src="../vendors/scripts/jquery.min.js"></script>
 <!--<script src="../vendors/scripts/ajouter_contribuable.js"></script>-->
+<script>
+    $(document).ready(function(){
+         
+         $('.btn-send').click(function(e){
 
+            e.preventDefault();
+             var numero = $('#numero').val();
+             var tel = $('#tel').val();
+
+              $.ajax({  
+                    url:"../traitements/charger_informations_modal.php",  
+                    method:"POST",  
+                    data:{numero:numero, tel:tel},  
+                    success:function(res)  
+                    {   
+                       $('.modal-body').html(res);
+                       $('#confirmations-modal').modal("show");
+                    }
+              });
+         });
+
+         $('.btn-confirme').click(function(e){
+            
+            e.preventDefault();
+             var numero = $('#numero').val();
+             var tel = $('#tel').val();
+
+              $.ajax({  
+                    url:"../traitements/ajouter_paiement.php",  
+                    method:"POST",  
+                    data:{numero:numero, tel:tel},  
+                    success:function(res)  
+                    {   
+                       
+                       $('#confirmations-modal').modal("hide");
+                         alert(res);
+                         numero = $('#numero').val('');
+                         tel = $('#tel').val('');
+
+                    }
+              });
+         });
+
+         $('.btn-cancel').click(function(e){
+            
+            e.preventDefault();
+             var numero = $('#numero').val('');
+             var tel = $('#tel').val('');
+
+             $('#confirmations-modal').modal("hide");
+
+             
+         });
+    });
+</script>
 <script src="../vendors/scripts/core.js"></script>
 <script src="../vendors/scripts/script.min.js"></script>
 <script src="../vendors/scripts/process.js"></script>

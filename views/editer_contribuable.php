@@ -144,7 +144,7 @@
 	</div>
 	<!-- js -->
 	<script src="../vendors/scripts/jquery.min.js"></script>
-	<script src="../vendors/scripts/editer_contribuable.js"></script>
+	<script src="../vendors/scripts/editer_contribuables.js"></script>
 	<script>
 		
 	</script>

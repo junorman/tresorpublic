@@ -39,7 +39,7 @@
 							<span class="micon fa fa-users"></span><span class="mtext">Contribuables</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="ajouter_contribuable.php">Créer</a></li>
+							<li><a href="ajouter_contribuable.php">Editer</a></li>
 							<li><a href="liste_contribuables.php">Consulter</a></li>
 						</ul>
 					</li>			

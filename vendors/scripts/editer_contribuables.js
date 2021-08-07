@@ -102,7 +102,7 @@ $(document).ready(function(){
                 }else{
 
                     $.ajax({  
-                    url:"traitements/editer_contribuable.php",  
+                    url:"../traitements/editer_contribuable.php",  
                     method:"POST",  
                     data:{nom:nom, prenom:prenom, tel:tel, 
                       type:type, sexe:sexe, id_cont:id_cont,

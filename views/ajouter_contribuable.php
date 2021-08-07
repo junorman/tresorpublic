@@ -113,7 +113,8 @@
 	</div>
 	<!-- js -->
 	<script src="../vendors/scripts/jquery.min.js"></script>
-	<script src="../vendors/scripts/ajouter_contribuable.js"></script>
+
+	<script src="../vendors/scripts/ajouter_contribuables.js"></script>
 	<script>
 		
 	</script>
