@@ -6,7 +6,7 @@
 
 <?php 
     
-    $sql = "SELECT * FROM contribuables WHERE statut_cont=1 ";
+    $sql = "SELECT * FROM titres t, recettes r where r.code_rec= t.code_rec";
     $result = mysqli_query($db,$sql);
     $row = mysqli_num_rows($result);
  ?>
@@ -25,7 +25,7 @@
                     <div class="col-md-6 col-sm-12 text-right">
                         <div class="dropdown">
                             <a class="btn" href="ajouter_contribuable.php" role="button" style="background-color: #254575;color: #ffffff;">
-                                <i class="fa fa-user-plus"></i> Editer un contribuable
+                                <i class="fa fa-user-plus"></i>
                             </a>
                             
                         </div>
@@ -50,35 +50,31 @@
                                 <th>Type</th>
                                 <th>Montant</th>
                                 <th>date de génération</th>
-                                <th>Motif</th>
                                 <th class="datatable-nosort">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php 
                             if ($row > 0) {
-                            while($get_contribuable = mysqli_fetch_array($result)) {?>
-                            <tr id="row_<?php echo $get_contribuable['id_cont'] ?>">
+                            while($get_titre = mysqli_fetch_array($result)) {?>
+                            <tr id="row_<?php echo $get_titre['id'] ?>">
                                 <td class="table-plus">
-                                    <?php echo $get_contribuable['id'] ?>
+                                    <?php echo $get_titre['id'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $get_contribuable['code'] ?>
+                                    <?php echo $get_titre['code'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $get_contribuable['matricule'] ?>
+                                    <?php echo $get_titre['matricule'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $get_contribuable['type'] ?>
+                                    <?php echo $get_titre['libelle_rec'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $get_contribuable['date'] ?>
+                                    <?php echo $get_titre['montant'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $get_contribuable['montant'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $get_contribuable['motif'] ?>
+                                    <?php echo $get_titre['date'] ?>
                                 </td>
                                 <td>
 										<div class="dropdown">
@@ -86,8 +82,8 @@
 												<i class="dw dw-more"></i>
 											</a>
 											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												<a class="dropdown-item" href="editer_contribuable.php?id_cont=<?php echo $get_contribuable['id_cont'] ?>"><i class="dw dw-edit2"></i> Edit</a>
-												<a class="dropdown-item btn-delete" id="<?php echo $get_contribuable['id_cont'] ?>"><i class="dw dw-delete-3"></i> Delete</a>
+												<a class="dropdown-item" href="editer_contribuable.php?id_cont=<?php echo $get_titre['id'] ?>"><i class="dw dw-edit2"></i> Edit</a>
+												<a class="dropdown-item btn-delete" id="<?php echo $get_titre['id'] ?>"><i class="dw dw-delete-3"></i> Delete</a>
 											</div>
 										</div>
 									</td>
@@ -108,7 +104,7 @@
 </div>
 <!-- js -->
 <script src="../vendors/scripts/jquery.min.js"></script>
-<script src="vendors/scripts/supprimer_contribuable.js"></script>
+<script src="../vendors/scripts/supprimer_contribuable.js"></script>
 <script>
     
 </script>

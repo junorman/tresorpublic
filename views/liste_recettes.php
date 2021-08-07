@@ -6,7 +6,7 @@
 
 	<?php 
         
-        $sql = "SELECT * FROM recettes WHERE statut_rec=1";
+        $sql = "SELECT * FROM recettes ";
         $result = mysqli_query($db,$sql);
         $row = mysqli_num_rows($result);
 	 ?>
@@ -47,7 +47,7 @@
 									<th class="table-plus datatable-nosort">Code</th>
 									<th>Libelle</th>
 									<th>Catégorie</th>
-									<th>Contribuable</th>
+									<th>Montant</th>
 									<th class="datatable-nosort">Action</th>
 								</tr>
 							</thead>
@@ -66,21 +66,22 @@
 									<td class="rec-click">
 										<?= $get_recettes['libelle_rec']; ?>
 									</td>
-									<?php
-									$sql2 = "SELECT libelle_cat FROM categories WHERE id_cat=$id_cat";
-        							$result2 = mysqli_query($db,$sql2);
-        							$get_cat = mysqli_fetch_array($result2);
-									?>
+										<?php
+											$sql2 = "SELECT libelle_cat FROM categories WHERE id_cat=$id_cat";
+											$result2 = mysqli_query($db,$sql2);
+											$get_cat = mysqli_fetch_array($result2);
+										?>
 									<td class="rec-click">
 										<?= $get_cat['libelle_cat']; ?>
 									</td>
-									<?php
-									$sql3 = "SELECT nom,prenom FROM contribuables WHERE id_cont=$id_cont";
-        							$result3 = mysqli_query($db,$sql3);
-        							$get_cont = mysqli_fetch_array($result3);
-									?>
+									<!--	<?php
+											$sql3 = "SELECT nom,prenom FROM contribuables WHERE id_cont=$id_cont";
+											$result3 = mysqli_query($db,$sql3);
+											$get_cont = mysqli_fetch_array($result3);
+										?> -->
 									<td class="rec-click">
-										<?= $get_cont['nom'].' '.$get_cont['prenom']; ?>
+										<!--<?= $get_cont['nom'].' '.$get_cont['prenom']; ?> -->
+										<?= $get_recettes['montant']. ' FCFA'; ?>
 									</td>
 									<td>
 										<div class="dropdown">

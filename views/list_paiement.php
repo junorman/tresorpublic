@@ -6,7 +6,7 @@
 
 <?php 
     
-    $sql = "SELECT * FROM paiements ";
+    $sql = "SELECT * FROM paiements p, recettes r, categories c where r.code_rec= p.code_rec and c.id_cat = r.categorie_rec";
     $result = mysqli_query($db,$sql);
     $row = mysqli_num_rows($result);
  ?>
@@ -19,13 +19,13 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="title">
-                            <h4> <i class="fa fa-book"></i> Liste des Paiements éffecctués</h4>
+                            <h4> <i class="fa fa-book"></i> Liste des Paiements éffectués</h4>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12 text-right">
                         <div class="dropdown">
                             <a class="btn" href="ajouter_contribuable.php" role="button" style="background-color: #254575;color: #ffffff;">
-                                <i class="fa fa-user-plus"></i> Editer un paiement
+                                <i class="fa fa-user-plus"></i>
                             </a>
                             
                         </div>
@@ -49,7 +49,6 @@
                                 <th>date de génération</th>
                                 <th>date de paiement</th>
                                 <th>Motif</th>
-                                <th class="datatable-nosort">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -64,10 +63,10 @@
                                     <?php echo $get_paiement['matricule'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $get_paiement['code_rec'] ?>
+                                    <?php echo $get_paiement['libelle_cat'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $get_paiement['montant'] ?>
+                                    <?php echo $get_paiement['montant']. ' CFA' ?>
                                 </td>
                                 <td>
                                     <?php echo $get_paiement['date_gen'] ?>
@@ -76,19 +75,8 @@
                                     <?php echo $get_paiement['date_paiement'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $get_paiement['motif'] ?>
+                                    <?php echo $get_paiement['libelle_rec'] ?>
                                 </td>
-                                <td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												<a class="dropdown-item" href="editer_contribuable.php?id_cont=<?php echo $get_paiement['id'] ?>"><i class="dw dw-edit2"></i> Edit</a>
-												<a class="dropdown-item btn-delete" id="<?php echo $get_paiement['id'] ?>"><i class="dw dw-delete-3"></i> Delete</a>
-											</div>
-										</div>
-									</td>
                             </tr>
                             <?php } } else{
 
