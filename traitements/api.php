@@ -6,7 +6,8 @@ $message = $_POST['message'];
 $date = date('Y-m-d H:i:s');
 $status = 0;
 $transaction = rand(15,35).$numero;
-$token = rand(10,35);
+//$token = rand(10,35);
+$token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.d1gyRFhqNm1BWWFFUEc2YndkSkdOSWRvZkV1Um1vSG5yR3pISkhEa1EvdGQ4MFpQMXdGSGcxK0RrT2QvVU9yVzlHQWJ6dC9EbkhLd2E4a3FFV2dnU0JGbWpIc2ZLVjlLNUlKenBLNENKcWdBMjRrUW9YdUV3aElxTWhUWThySEhKcVlEWHpJRGdYdmJqV1VkQVRUQVVEVTBZa3hHQS9uMkMrNng2NlBSbjl5c2NqS2RlM0lsN0lWdjgzemZ2bDJYOjpHN3lpNXhjOVRZdG1tTVVTamJMcDN3PT0=.Yo8sFgnsTGMdUCrPQp4px34+N9j3PyM1gL7R1PRqJUY=";
 
 $sql = "SELECT * FROM titres WHERE code = '".$message."'"; 
 $result = mysqli_query($db,$sql);
