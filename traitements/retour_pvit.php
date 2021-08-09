@@ -146,7 +146,7 @@ QRcode::png($text, $file, 'L', 10, 2);
                                 <td style="border-right:1px solid #000000;border-bottom:1px solid #ffffff;border-top:1px solid #000000;text-align: center;"></td>
                             </tr>
                             <!--  -->
-                            <tr rospan="3" style="height: 200px;">
+                            <tr rospan="3" style="height: 50px;">
                                 <td style="border:1px solid #000000;text-align: center;"></td>
                                 <td style="border:1px solid #000000;text-align: center;"></td>
                                 <td style="border:1px solid #000000;text-align: center;"></td>
