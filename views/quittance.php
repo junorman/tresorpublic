@@ -1,13 +1,20 @@
 <?php
     include '../db/db.php';
     require_once '../phpqrcode/qrlib.php';
+    
+    $code = $_GET['numero'];
+
+    $sql = "SELECT *, p.id as id_paie FROM paiements as p, titres as t
+    WHERE p.code = '$code' AND t.code=p.code";
+    $result = mysqli_query($db,$sql);
+    $get_infos = mysqli_fetch_array($result);
 
     $path = '../qrcodes/';
     $file = $path.uniqid().".png";
 
     $text = "5717736";
 
-    QRcode::png($text, $file, 'L', 10, 2);    
+    QRcode::png($code, $file, 'L', 10, 2);    
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +36,7 @@
     
 </head>
 <body style="background:#ffffff;">
-    <div id="loadingMask" style="width: 100%; height: 100%; position: fixed; background: #fff;text-align: center;font-size: 30px;">Veuillez patienter...</div>
+    <!-- <div id="loadingMask" style="width: 100%; height: 100%; position: fixed; background: #fff;text-align: center;font-size: 30px;">Veuillez patienter...</div> -->
    <div class="container" style="margin-top: 2%;" id="report">
       <!-- Begin -->
        <div class="row">
@@ -62,7 +69,7 @@
                <strong><b style="position:relative;top: 20%;">délivtée en réglement de l'opération ci-après:</b></strong>
            </div>
 
-           <div class="col-md-3" style="border: 1px solid #000000;height: 200px;">
+           <div class="col-md-3" style="border: 1px solid #000000;height: 200px;width: 220px;">
                <div class="row">
                    <div class="col-md-12" style="border: 1px solid #000000; text-align: center;">
                        REPUBLIQUE GABONAISE
@@ -70,7 +77,9 @@
                 </div>
                 <div class="row" style="padding: 15px;">
                    <div class="col-md-12">
-                       <strong>Date:</strong> <span>11/03/2019</span><br>
+                       <strong>Date:</strong> <span>
+                           <?php echo $get_infos['date_gen'] ?>
+                       </span><br>
                    </div>
                 </div>
                 <div class="row" style="padding: 15px;">
@@ -80,38 +89,46 @@
                 </div>
                 <div class="row" style="padding: 15px;">
                    <div class="col-md-12">
-                       <strong>N° opération:</strong> <span>124230011</span><br>
+                       <strong>N° opération:</strong> <span>
+                           <?php echo $get_infos['id_paie'] ?>
+                       </span><br>
                    </div>
                 </div>
                
            </div>
-       </div>
+           
+       </div><br><br><br>
        <!-- End -->
 
        <!-- TItle -->
-         <div class="row">
-             <div class="col-md-5" style="border: 1px solid #000000;padding: 1%;margin-top: 2%;">
-                 <strong>Redevable:</strong> <span>MANFOUMBI FULBERT</span><br><br>
-                 <strong>Nature du versement:</strong> <span>RECETTE DIVERSE</span><br>
-                 <strong>atd succesion</strong><br>
-                 <strong>Swit BEAC du 11/03/2019</strong><br>
-             </div>
-             <div class="col-md-1" style="margin-top: 2%;">
-                 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-             </div>
-             <div class="col-md-5" style="border: 1px solid #000000;padding: 1%;margin-top: 2%;">
-                 <strong>Partie versante:</strong> <span>MANFOUMBI FULBERT</span><br><br>
-                 <strong>Chèque N°:</strong> <span>106537</span><br>
-                 <strong>Compte N°:</strong> <span>SWIFT</span><br>
-                 <strong>Banque:</strong> <span>SWIFT BEAC LIBREVILLE</span><br>
-                 <strong>sous reserve d'encaissement</strong>
-             </div>
-         </div><br>
+         <div class="row" style="position:relative; top: 10px;"><br><br>
+             <table class="table" width="100%" style="border: 1px solid #000000;padding: 1%;margin-top: 2%;font-size: 12px; position: relative;top: 50%;">
+                 <td style="border: 1px solid #000000;padding: 1%;margin-top: 2%;font-size: 12px;">
+                     <strong>Redevable:</strong> <span>
+                         <?php echo $get_infos['nom'].' '.$get_infos['prenom'] ?>
+                     </span><br><br>
+                     <strong>Nature du versement:</strong> <span>
+                         <?php echo $get_infos['motif'] ?>
+                     </span><br>
+                     <strong>atd succesion</strong><br>
+                     <strong>Swit BEAC du <?php echo $get_infos['date_gen'] ?></strong><br>
+                 </td>
+                 <td style="border: 1px solid #000000;padding: 1%;margin-top: 2%;font-size: 12px;">
+                     <strong>Partie versante:</strong> <span>
+                        <?php echo $get_infos['nom'].' '.$get_infos['prenom'] ?>
+                     </span><br><br>
+                     <strong>Chèque N°:</strong> <span>106537</span><br>
+                     <strong>Compte N°:</strong> <span>SWIFT</span><br>
+                     <strong>Banque:</strong> <span>SWIFT BEAC LIBREVILLE</span><br>
+                     <strong>sous reserve d'encaissement</strong>
+                 </td>
+             </table>
+         </div>
        <!-- End -->
 
        <!-- Table -->
         <div class="row">
-            <div class="col-md-12">
+            <!-- <div class="col-md-12"> -->
                 <table class="table" style="border:1px solid #000000;margin-top: 2%;">
                     <tr>
                         <thead>
@@ -132,7 +149,7 @@
                                 <td style="border-right:1px solid #000000;border-bottom:1px solid #ffffff;border-top:1px solid #000000;text-align: center;">39</td>
                                 <td style="border-right:1px solid #000000;border-bottom:1px solid #ffffff;border-top:1px solid #000000;text-align: center;"></td>
                                 <td style="border-right:1px solid #000000;border-bottom:1px solid #ffffff;border-top:1px solid #000000;text-align: center;">113414R</td>
-                                <td style="border-right:1px solid #000000;border-bottom:1px solid #ffffff;border-top:1px solid #000000;text-align: center;">**********30.240.076</td>
+                                <td style="border-right:1px solid #000000;border-bottom:1px solid #ffffff;border-top:1px solid #000000;text-align: center;">**** <?php echo $get_infos['montant'] ?></td>
                                 <td style="border-right:1px solid #000000;border-bottom:1px solid #ffffff;border-top:1px solid #000000;text-align: center;"></td>
                             </tr>
                             <!--  -->
@@ -143,7 +160,7 @@
                                 <td style="border:1px solid #000000;text-align: center;"></td>
                                 <td style="border:1px solid #000000;text-align: center;"></td>
                                 <td style="border:1px solid #000000;text-align: center;"></td>
-                                <td style="border:1px solid #000000;text-align: center;">***</td>
+                                <td style="border:1px solid #000000;text-align: center;"></td>
                                 <td style="border:1px solid #000000;text-align: center;"></td>
                             </tr>
                             <!--  -->
@@ -154,13 +171,13 @@
                                 <td></td>
                                 <td></td>
                                 <td></td> -->
-                                <td style="border:1px solid #000000;">**********30.240.076</td>
+                                <td style="border:1px solid #000000;">****<?php echo $get_infos['montant'] ?></td>
                                 <td style="border:1px solid #ffffff;">----</td>
                             </tr>
                         </tbody>
                     </tr>
                 </table>
-            </div>
+            <!-- </div> -->
         </div>
        <!-- End -->
 
