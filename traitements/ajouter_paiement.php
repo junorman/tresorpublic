@@ -47,7 +47,7 @@ if ($row > 0) {
 
 	echo "success";
 }else{
-	echo 'code invalide ou déja payé';
+	echo "error";
 }
 
 ?>
