@@ -42,10 +42,9 @@ if ($row > 0) {
 
 	var_dump($response);
 
-	echo "success";}
-	//{ echo "success";}
+	echo "success";
+}else{
+	echo 'code invalide';
 }
-
-
 
 ?>
