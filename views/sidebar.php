@@ -17,7 +17,7 @@
 							<span class="micon fa fa-money"></span><span class="mtext">Paiements</span>
 						</a>
 						<ul class="submenu">
-							<li></span><a href="ajouter_paiement.php">Encaissement</a></li>
+							<li><a href="list_paiement.php">Caisse</a></li>
 							<li><a href="list_paiement.php">Encaissées</a></li>
 							<li>	</span><a href="list_titre.php">Générées</a></li>
 						</ul>
@@ -55,6 +55,14 @@
 						<ul class="submenu">
 							<li><a href="gerer_categories.php">Gérer les catégories</a></li>
 							<li><a href="gerer_types.php">Gérer les types</a></li>
+						</ul>
+					</li>
+					<li>
+					<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon fa fa-group"></span><span class="mtext">Espace Client</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="ajouter_paiement.php">Encaissements</a></li>
 						</ul>
 					</li>
 					
