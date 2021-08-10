@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-md-6 col-sm-12 text-right">
                         <div class="dropdown">
-                            <a class="btn" href="liste_contribuables.php" role="button" style="background-color: #254575;color: #ffffff;">
+                            <a class="btn" href="generer_quittance.php" role="button" style="background-color: #254575;color: #ffffff;">
                                 <i class="fa fa-eye"></i> Générer Quittance
                             </a>
                             
