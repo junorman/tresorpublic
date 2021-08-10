@@ -14,7 +14,7 @@
 
 	<div class="main-container">
 		<div class="pd-ltr-20 xs-pd-20-10">
-			<div class="min-height-200px">
+			<div class="min-height-400px">
 				<div class="page-header" style="border:2px solid #254575;">
 					<div class="row">
 						<div class="col-md-6 col-sm-12">

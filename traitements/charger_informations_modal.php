@@ -11,7 +11,7 @@ WHERE t.code_rec=r.code_rec AND t.code ='$numero'";
 
 $result = mysqli_query($db,$sql);
 $get_confirmation = mysqli_fetch_array($result);
-
+if($get_confirmation){
  ?>
 
 
@@ -34,6 +34,6 @@ $get_confirmation = mysqli_fetch_array($result);
  	</div>
  </div>
  <?php 
-
+}
  ?>
 
