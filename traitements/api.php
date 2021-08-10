@@ -2,9 +2,11 @@
 include '../db/db.php';
 
 /*$message = $_POST['message'] = "hdoeho5989dzdz";
-$numero = $_POST['numero'] = "074820870";*/
+$numero = $_POST['numero'] = "074820870";
+*/
 $message = $_POST['message'];
 $numero = $_POST['numero'];
+
 
 $sql = "SELECT * FROM titres WHERE code = '".$message."' and statut = 0"; 
 
@@ -49,7 +51,7 @@ if ($row > 0) {
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 	$resultat = curl_exec($ch);
 
-	echo "success";
+	echo $resultat;
 }else{
 	echo "error";
 }
