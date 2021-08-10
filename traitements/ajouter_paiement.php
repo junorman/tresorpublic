@@ -13,7 +13,13 @@ $token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.d1gyRFhqNm1BWWFFUEc2YndkSkdOSWRvZ
 $result = mysqli_query($db,$sql);
 $row = mysqli_num_rows($result);
 
+
 if ($row > 0) {
+
+	$sql2 = "SELECT * FROM titres WHERE code = '".$numero."'";
+	$result2 = mysqli_query($db,$sql2);
+	$get_infos = mysqli_fetch_array($result2);
+
 	mysqli_query($db,"insert into tmp_paiement (code, date, transaction, tel, statut)
 					 values('$numero','$date','$transaction', '$tel', '$status')");
 	
@@ -21,7 +27,7 @@ if ($row > 0) {
 
 	$post = [
 		'tel_marchand' => '074814529',
-		'montant' => $row->montant,
+		'montant' => $get_infos['montant'],
 		'ref'   => $transaction,
 		'tel_client'  => $tel,
 		'token'   => $token,

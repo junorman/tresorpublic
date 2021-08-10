@@ -1,7 +1,7 @@
 
-	<?php include 'views/header.php'; ?>
+	<?php include '../views/header.php'; ?>
 
-	<?php include 'views/sidebar.php'; ?>
+	<?php include '../views/sidebar.php'; ?>
 
 	<div class="mobile-menu-overlay"></div>
 
@@ -11,7 +11,7 @@
            position: absolute;
            top: 0;
            left: 10%;
-           background-image: url(vendors/images/cropped-logo-dgcpt2-192x192.png);
+           background-image: url(../vendors/images/cropped-logo-dgcpt2-192x192.png);
            background-size: 500px;
            background-position: center;
            background-repeat: no-repeat;
@@ -112,15 +112,15 @@
 		</div>
 	</div>
 	<!-- js -->
-	<script src="vendors/scripts/core.js"></script>
-	<script src="vendors/scripts/script.min.js"></script>
-	<script src="vendors/scripts/process.js"></script>
-	<script src="vendors/scripts/layout-settings.js"></script>
-	<script src="src/plugins/apexcharts/apexcharts.min.js"></script>
-	<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
-	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
-	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
-	<script src="vendors/scripts/dashboard.js"></script>
+	<script src="../vendors/scripts/core.js"></script>
+	<script src="../vendors/scripts/script.min.js"></script>
+	<script src="../vendors/scripts/process.js"></script>
+	<script src="../vendors/scripts/layout-settings.js"></script>
+	<script src="../src/plugins/apexcharts/apexcharts.min.js"></script>
+	<script src="../src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="../src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+	<script src="../src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+	<script src="../src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+	<script src="../vendors/scripts/dashboard.js"></script>
 </body>
 </html>
