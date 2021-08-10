@@ -89,12 +89,10 @@
             <div class="pd-20 card-box mb-30" style="border:2px solid #254575;">
                 <div class="row">
                     <div class="col-md-6" style="background:#254575;color: #ffffff;">
-                        <span class="fa fa-book text-center" style="font-size:100px;position: relative;left: 35%;top: 10%;">
+                        <span class="fa fa-book text-center" style="font-size:100px;position: relative;left: 35%;top: 20%;">
                             
                         </span><br>
-                        <div class="" style="margin-top:5%;">
-                    veillez saisir le numero qui vous a été remis et votre numero de telephone Airtel, a la suite un message de confirmation vous sera envoyer et vous invitant a saisir votre code Airtel money, a la suite de ceci, votre compte sera debité du montant correspondant a la recette a payer, vérifiez bien que le numero saisit est belle et bien celui qui vous a été généré. <br>
-                </div>
+                     
                     </div>
                     <div class="col-md-6">
                         <div class="clearfix">
@@ -117,7 +115,7 @@
                                         <i class="fa fa-remove"></i> Annuler
                                         </button>
                                         <button class="btn btn-success btn-generer" role="button">
-                                        <i class="fa fa-check"></i> Payer
+                                        <i class="fa fa-check"></i> Générer
                                         </button>
                             </div>
                         

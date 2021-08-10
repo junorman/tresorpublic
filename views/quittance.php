@@ -36,7 +36,7 @@
     
 </head>
 <body style="background:#ffffff;">
-    <!-- <div id="loadingMask" style="width: 100%; height: 100%; position: fixed; background: #fff;text-align: center;font-size: 30px;">Veuillez patienter...</div> -->
+    <div id="loadingMask" style="width: 100%; height: 100%; position: fixed; background: #fff;text-align: center;font-size: 30px;">Veuillez patienter...</div>
    <div class="container" style="margin-top: 2%;" id="report">
       <!-- Begin -->
        <div class="row">
@@ -69,7 +69,7 @@
                <strong><b style="position:relative;top: 20%;">délivtée en réglement de l'opération ci-après:</b></strong>
            </div>
 
-           <div class="col-md-3" style="border: 1px solid #000000;height: 200px;width: 220px;">
+           <div class="col-md-4" style="border: 1px solid #000000;height: 200px;width: 32%;">
                <div class="row">
                    <div class="col-md-12" style="border: 1px solid #000000; text-align: center;">
                        REPUBLIQUE GABONAISE
@@ -97,12 +97,12 @@
                
            </div>
            
-       </div><br><br><br>
+       </div><br>
        <!-- End -->
 
        <!-- TItle -->
-         <div class="row" style="position:relative; top: 10px;"><br><br>
-             <table class="table" width="100%" style="border: 1px solid #000000;padding: 1%;margin-top: 2%;font-size: 12px; position: relative;top: 50%;">
+         <div class="row" style="position:relative; top: 1%;">
+             <table class="table" width="100%" style="border: 1px solid #000000;padding: 1%;margin-top: 2%;font-size: 12px; position: relative;top: 20%;">
                  <td style="border: 1px solid #000000;padding: 1%;margin-top: 2%;font-size: 12px;">
                      <strong>Redevable:</strong> <span>
                          <?php echo $get_infos['nom'].' '.$get_infos['prenom'] ?>
