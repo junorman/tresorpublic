@@ -133,30 +133,25 @@
         <?php include 'footer.php'; ?>
     </div>
 </div>
-
-<div class="col-md-4 col-sm-12 mb-30">
-    <div class="pd-20 card-box height-100-p">
-        <h5 class="h4"><i class="fa fa-check-circle"></i> Confirmation !</h5>
         
-        <div class="modal fade bs-example-modal-lg" id="confirmations-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header" style="background: #254575;color:#ffffff !important;">
-                        <h4 class="modal-title text-white" id="myLargeModalLabel"><i class="fa fa-eye"></i> Vérification</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    </div>
-                    <div class="modal-body">
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger btn-cancel" data-dismiss="modal"><i class="fa fa-remove"></i> Abondonner</button>
-                        <button type="button" class="btn btn-success btn-confirme"><i class="fa fa-check"></i> Confirmer</button>
-                    </div>
-                </div>
+<div class="modal fade bs-example-modal-lg" id="confirmations-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background: #254575;color:#ffffff !important;">
+                <h4 class="modal-title text-white" id="myLargeModalLabel"><i class="fa fa-eye"></i> Vérification</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-cancel" data-dismiss="modal"><i class="fa fa-remove"></i> Abondonner</button>
+                <button type="button" class="btn btn-success btn-confirme"><i class="fa fa-check"></i> Confirmer</button>
             </div>
         </div>
     </div>
-    </div>
+</div>
+   
 <!-- js -->
 <script src="../vendors/scripts/jquery.min.js"></script>
 <!--<script src="../vendors/scripts/ajouter_contribuable.js"></script>-->
@@ -177,6 +172,7 @@
                     {   
                        $('.modal-body').html(res);
                        $('#confirmations-modal').modal("show");
+
                     }
               });
          });
@@ -194,10 +190,12 @@
                     success:function(res)  
                     {   
                        
+
                        $('#confirmations-modal').modal("hide");
                          alert(res);
                          numero = $('#numero').val('');
                          tel = $('#tel').val('');
+
 
                     }
               });
