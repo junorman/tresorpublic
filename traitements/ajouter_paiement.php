@@ -45,13 +45,9 @@ if ($row > 0) {
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 	$resultat = curl_exec($ch);
 
-
-	var_dump($response);
-
-
 	echo "success";
 }else{
-	echo 'code invalide';
+	echo "error";
 }
 
 ?>

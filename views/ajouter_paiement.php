@@ -190,11 +190,16 @@
                     success:function(res)  
                     {   
                        
-
-                       $('#confirmations-modal').modal("hide");
+                       if (res == "error") {
+                        alert("code invalide ou déjà payé !");
+                       }else{
+                          $('#confirmations-modal').modal("hide");
                          alert(res);
                          numero = $('#numero').val('');
                          tel = $('#tel').val('');
+                       }
+
+                       
 
 
                     }
