@@ -27,7 +27,7 @@ if ($row > 0) {
 	$get_infos = mysqli_fetch_array($result2);
 
 	mysqli_query($db,"insert into tmp_paiement (code, date, transaction, tel, statut)
-					 values('$numero','$date','$transaction', '$numero', '$status')");
+					 values('$message','$date','$transaction', '$numero', '$status')");
 	
 	// pvit implementation
 
