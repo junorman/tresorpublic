@@ -2,7 +2,7 @@
 include '../db/db.php';
 extract($_POST);
 
-$sql = "SELECT * FROM titres WHERE code = '".$numero."'"; 
+$sql = "SELECT * FROM titres WHERE code = '".$numero."' and statut = 0"; 
 
 $date = date('Y-m-d H:i:s');
 $status = 0;

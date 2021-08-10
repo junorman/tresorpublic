@@ -6,7 +6,7 @@
 
 <?php 
     
-    $sql = "SELECT * FROM titres t, recettes r where r.code_rec= t.code_rec and t.statut = 1";
+    $sql = "SELECT * FROM titres t, recettes r where r.code_rec= t.code_rec and t.statut = 0";
     $result = mysqli_query($db,$sql);
     $row = mysqli_num_rows($result);
  ?>
