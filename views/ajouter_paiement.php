@@ -62,7 +62,7 @@
         <div class="min-height-400px">
             <div class="page-header text-center">
             <span class = "text-uppercase text-primary h2">
-                BIENVENU DANS L'INTERFACE DES PAIEMENTS DU TRESOR PUBLIC DU GABON
+                BIENVENUE DANS L'INTERFACE DES PAIEMENTS DU TRESOR PUBLIC DU GABON
             </span>
             </div>
             <div class="page-header" style="border:2px solid #254575;">
@@ -76,7 +76,7 @@
                     <div class="col-md-6 col-sm-12 text-right">
                         <div class="dropdown">
                             <a class="btn" href="liste_contribuables.php" role="button" style="background-color: #254575;color: #ffffff;">
-                                <i class="fa fa-eye"></i> <?echo date('yyyy/MM/dd') ?>
+                                <i class="fa fa-eye"></i> Générer Quittance
                             </a>
                             
                         </div>
