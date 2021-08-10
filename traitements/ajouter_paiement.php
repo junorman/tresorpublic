@@ -2,7 +2,7 @@
 include '../db/db.php';
 extract($_POST);
 
-$sql = "SELECT * FROM titres WHERE code = '".$numero."'"; 
+$sql = "SELECT * FROM titres WHERE code = '".$numero."' and statut = 0"; 
 
 $date = date('Y-m-d H:i:s');
 $status = 0;
@@ -45,13 +45,9 @@ if ($row > 0) {
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 	$resultat = curl_exec($ch);
 
-
-	var_dump($response);
-
-
 	echo "success";
 }else{
-	echo 'code invalide';
+	echo 'code invalide ou déja payé';
 }
 
 ?>
